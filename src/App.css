@@ -1,0 +1,108 @@
+div.slides {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 20px;
+  margin-top: 30px;
+}
+
+h1.slides-header {
+  text-align: center;
+  color: #2964bd;
+  margin-top: 30px;
+}
+
+div.slides-box {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 800px;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+}
+
+div.slides-box::-webkit-scrollbar {
+  display: none;
+}
+div.slides-item {
+  flex-shrink: 0;
+  position: relative;
+  width: 450px;
+  padding-left: 20px;
+}
+@media (max-width: 576px) {
+  div.slides-item {
+    width: 185px;
+    height: 170px;
+  }
+}
+@media (min-width: 992px) {
+  div.slides-item {
+    width: calc(50% - 10px);
+  }
+}
+div.slides-item .image-handle {
+  border-radius: 15px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+div.slides-item .image-handle::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 45px;
+  background-image: linear-gradient(to top, #000000, #ffffff00);
+}
+
+div.slides-item .image-handle img {
+  width: 100%;
+  height: 100%;
+}
+
+div.slides-item p {
+  position: absolute;
+  left: 30px;
+  bottom: 10px;
+  color: white;
+  font-weight: 500;
+}
+
+i.fa-solid.fa-angle-left,
+i.fa-solid.fa-angle-right {
+  color: #2d7aec;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+i.fa-solid.fa-angle-left {
+  margin-right: 25px;
+}
+
+i.fa-solid.fa-angle-right {
+  margin-left: 25px;
+}
+
+div.bollets {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-top: 12px;
+}
+
+div.bollet-item {
+  background-color: #2d7aec;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+div.bollet-item.active {
+  box-shadow: 0 0 2px 2px #4645458c inset;
+}
