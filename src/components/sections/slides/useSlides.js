@@ -78,7 +78,7 @@ const useSlides = () => {
       ...el,
       active: false,
     }));
-    for (let x = 0; x < 5; x++) {
+    for (let x = 0; x < slideItem.length; x++) {
       if (
         slideItem.offsetWidth * x <=
           slidebox.scrollLeft + 0.5 * slideItem.offsetWidth &&
@@ -89,10 +89,21 @@ const useSlides = () => {
       }
     }
     setSlideItems(newSlideItems);
-    // if (slidebox.scrollLeft === slideItem.offsetWidth * newSlideItems.length) {
-    //   slidebox.scrollLeft = 0;
-    // }
+    handleLoopSlide();
   };
+  const handleLoopSlide = () => {
+    // console.log("slidebox.scrollLeft",slidebox.scrollLeft)
+    // console.log("slideboxRightEdge",slidebox.scrollLeft + slidebox.offsetWidth)
+    // console.log("slideItem.offsetWidth * slideItems.length",slideItem.offsetWidth * slideItems.length)
+
+    const slideboxRightEdge = slidebox.scrollLeft + slidebox.offsetWidth
+
+    if (slideboxRightEdge >= slideItem.offsetWidth * slideItems.length) {
+      slidebox.classList.add("no-smooth");
+      slidebox.scrollLeft = 0;
+      slidebox.classList.remove("no-smooth");
+    }
+  }
   
   return {slideItems,refOne, refTwo, handleClickRight, handleClickLeft, handleBolletClick, handleActive}
 }

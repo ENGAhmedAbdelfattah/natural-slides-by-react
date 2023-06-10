@@ -21,6 +21,9 @@ div.slides-box {
   scroll-behavior: smooth;
   scrollbar-width: none;
 }
+div.slides-box.no-smooth {
+  scroll-behavior:auto;
+}
 
 div.slides-box::-webkit-scrollbar {
   display: none;
