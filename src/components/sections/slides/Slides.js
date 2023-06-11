@@ -25,13 +25,13 @@ function App() {
           <i className="fa-solid fa-angle-right" onClick={handleClickRight}></i>
         </div>
         <div className="bollets">
-          {/* {slideItems.map((el, inx) => (
+          {slideItems.map((el, inx) => (
             <div
               key={el.id}
               className={`bollet-item ${el.active ? "active" : ""}`}
               onClick={() => handleBolletClick(inx)}
             ></div>
-          ))} */}
+          ))}
         </div>
       </div>
     </div>
