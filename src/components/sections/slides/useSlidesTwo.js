@@ -8,41 +8,42 @@ import { useEffect, useRef, useState } from "react";
 
 const useSlides = () => { 
   const [slideItems, setSlideItems] = useState([
-    {
-      id: "slide-1",
-      image: slideImgOne,
-      paragraph: "1 image for display montains",
-      active: true,
-    },
-    {
-      id: "slide-2",
-      image: slideImgTwo,
-      paragraph: "2 image for display montains",
-      active: false,
-    },
-    {
-      id: "slide-3",
-      image: slideImgThree,
-      paragraph: "3 image for display montains",
-      active: false,
-    },
-    {
-      id: "slide-4",
-      image: slideImgFour,
-      paragraph: "4 image for display montains",
-      active: false,
-    },
-    {
-      id: "slide-5",
-      image: slideImgFive,
-      paragraph: "5 image for display montains",
-      active: false,
-    },
-  ]);
+      {
+        id: "slide-1",
+        image: slideImgOne,
+        paragraph: "1 image for display montains",
+        active: true,
+      },
+      {
+        id: "slide-2",
+        image: slideImgTwo,
+        paragraph: "2 image for display montains",
+        active: false,
+      },
+      {
+        id: "slide-3",
+        image: slideImgThree,
+        paragraph: "3 image for display montains",
+        active: false,
+      },
+      {
+        id: "slide-4",
+        image: slideImgFour,
+        paragraph: "4 image for display montains",
+        active: false,
+      },
+      {
+        id: "slide-5",
+        image: slideImgFive,
+        paragraph: "5 image for display montains",
+        active: false,
+      },
+    ]);
   
   const [slidebox, setSlidebox] = useState(null);
   const [slideItem, setSlideItem] = useState(null);
-  
+  const [index, setIndex] = useState(0);
+
   const refBox = useRef();
   const refItem = useRef();
 
@@ -54,10 +55,18 @@ const useSlides = () => {
 
   const handleClickRight = () => {
     slidebox.scrollLeft += slideItem.offsetWidth;
+    // const slideItemsClone = [...slideItems];
+    // slideItemsClone.push(slideItems[0 + index])
+    // setSlideItems(slideItemsClone)
+    // setIndex(i => i + 1)
   };
 
   const handleClickLeft = () => {
     slidebox.scrollLeft -= slideItem.offsetWidth - 20;
+    // const slideItemsClone = [...slideItems];
+    // slideItemsClone.unshift(slideItemsClone[4])
+    // setSlideItems(slideItemsClone)
+    // setIndex(i => i + 1)
   };
 
   const handleBolletClick = (inx) => {
@@ -88,8 +97,21 @@ const useSlides = () => {
       }
     }
     setSlideItems(newSlideItems);
+    // handleLoopSlide();
   };
-  
+
+  const handleLoopSlide = () => {
+    const slideItemsClone = [...slideItems];
+
+        const slideboxRightEdge = slidebox.scrollLeft + slidebox.offsetWidth
+
+    if (slideboxRightEdge >= slideItem.offsetWidth * slideItems.length - 1) {
+      slideItemsClone.push(slideItemsClone[0]);
+      // slideItemsClone.shift(slideItemsClone[0]);
+    }
+    setSlideItems(slideItemsClone);
+  }
+
   return {slideItems,refBox, refItem, handleClickRight, handleClickLeft, handleBolletClick, handleActive}
 }
 
