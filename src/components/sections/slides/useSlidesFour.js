@@ -1,8 +1,8 @@
-import slideImgOne from "./../../../assets/code img-1.jpg";
-import slideImgTwo from "./../../../assets/code img-2.jpg";
-import slideImgThree from "./../../../assets/code img-3.jpg";
-import slideImgFour from "./../../../assets/code img-4.jpg";
-import slideImgFive from "./../../../assets/code img-5.jpg";
+import slideImgOne from "./../../../assets/code-img-1.webp";
+import slideImgTwo from "./../../../assets/code-img-2.webp";
+import slideImgThree from "./../../../assets/code-img-3.webp";
+import slideImgFour from "./../../../assets/code-img-4.webp";
+import slideImgFive from "./../../../assets/code-img-5.webp";
 
 import { useEffect, useRef, useState } from "react";
 
