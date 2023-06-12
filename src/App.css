@@ -20,7 +20,7 @@ div.slides-box {
   overflow-x: scroll;
   scroll-behavior: smooth;
   scrollbar-width: none;
-  /* scroll-snap-type: x proximity; */
+  scroll-snap-type: x proximity;
   /* scroll-padding: 50%; */
 }
 div.slides-box.no-smooth {
@@ -41,7 +41,7 @@ div.slides-item {
 @media (max-width: 576px) {
   div.slides-item {
     width: 185px;
-    height: 170px;
+    height: 250px;
   }
 }
 @media (min-width: 992px) {
@@ -69,6 +69,7 @@ div.slides-item .image-handle::after {
 div.slides-item .image-handle img {
   width: 100%;
   height: 100%;
+  /* object-fit: cover; */
 }
 
 div.slides-item p {
