@@ -154,7 +154,7 @@ const useSlides = () => {
   const handleLoopSlide = () => {
     const slideboxRightEdge = slidebox.scrollLeft + slidebox.offsetWidth;
 
-    if (slideboxRightEdge >= slideItem.offsetWidth * slideItems.length) {
+    if (slideboxRightEdge >= slideItem.offsetWidth * slideItems.length - 20) {
       slidebox.classList.add("no-smooth");
       slidebox.scrollLeft =
         ((slideItems.length + 1) / 2) * slideItem.offsetWidth -
