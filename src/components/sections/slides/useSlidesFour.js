@@ -158,13 +158,14 @@ const useSlides = () => {
       slidebox.classList.add("no-smooth");
       slidebox.scrollLeft =
         ((slideItems.length + 1) / 2) * slideItem.offsetWidth -
-        2 * slideItem.offsetWidth;
+        2 * slideItem.offsetWidth -
+        20;
       slidebox.classList.remove("no-smooth");
     }
 
     if (slidebox.scrollLeft === 0) {
       slidebox.classList.add("no-smooth");
-      slidebox.scrollLeft = slideboxRightEdge + slideItem.offsetWidth * 3;
+      slidebox.scrollLeft = slideboxRightEdge + slideItem.offsetWidth * 3 - 20;
       slidebox.classList.remove("no-smooth");
     }
   };
