@@ -34,6 +34,7 @@ div.slides-item {
   flex-shrink: 0;
   position: relative;
   width: 450px;
+  height: 200px;
   padding-left: 20px;
   scroll-snap-align: start;
 }
@@ -51,11 +52,10 @@ div.slides-item {
 div.slides-item .image-handle {
   border-radius: 15px;
   width: 100%;
-  height: 200px;
+  height: 100%;
   overflow: hidden;
   position: relative;
 }
-
 div.slides-item .image-handle::after {
   content: "";
   position: absolute;
