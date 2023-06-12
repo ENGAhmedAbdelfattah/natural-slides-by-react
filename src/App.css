@@ -41,7 +41,7 @@ div.slides-item {
 @media (max-width: 576px) {
   div.slides-item {
     width: 185px;
-    height: 250px;
+    height: 170px;
   }
 }
 @media (min-width: 992px) {
