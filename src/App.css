@@ -20,6 +20,8 @@ div.slides-box {
   overflow-x: scroll;
   scroll-behavior: smooth;
   scrollbar-width: none;
+  /* scroll-snap-type: x proximity; */
+  /* scroll-padding: 50%; */
 }
 div.slides-box.no-smooth {
   scroll-behavior:auto;
@@ -33,6 +35,7 @@ div.slides-item {
   position: relative;
   width: 450px;
   padding-left: 20px;
+  scroll-snap-align: start;
 }
 @media (max-width: 576px) {
   div.slides-item {
